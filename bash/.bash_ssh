@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# If no SSH agent is already running, start one now. Re-use sockets so we never
+# have to start more than one session.
+
+export SSH_AUTH_SOCK=$HOME/.ssh-socket
+
+ssh-add -l >/dev/null 2>&1
+if [ $? = 2 ]; then
+   # No ssh-agent running
+   rm -rf $SSH_AUTH_SOCK
+   ssh-agent -a $SSH_AUTH_SOCK >/tmp/.ssh-script
+   source /tmp/.ssh-script
+   echo $SSH_AGENT_PID > $HOME/.ssh-agent-pid
+   rm /tmp/.ssh-script
+fi
+
+# Adding copletion to ssh scp and sft from .ssh/config Host definitions
+complete -o default -o nospace -W "$(awk '/^Host / {print $2}' < $HOME/.ssh/config)" scp sftp ssh
