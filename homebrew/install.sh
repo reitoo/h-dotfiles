@@ -13,7 +13,10 @@ then
   exit
 fi
 
+packages="grc coreutils spark maven nmap scala git tomcat"
 # Install homebrew packages
-brew install grc coreutils spark maven nmap scala
+brew install $packages
+# Upgrade
+brew upgrade $packages
 
 exit 0

@@ -55,5 +55,6 @@ alias seachange='cd ~/comhem/git/seachangeservice-abcs'
 #
 alias tunnelverimatrix='ssh -L 8090:10.9.208.175:8090 reader@srvuchoismid-pr01.comhem.com'
 alias tunneltivotest='ssh -L 8100:partner-int.test.comhem.com:80 -i ~/.ssh/icc -l oracle tsrvusoamid-dev06.comhem.com'
+alias tunneltivo='ssh -L 8200:partner-int.test.comhem.com:80 -i ~/.ssh/icc -l oracle tsrvusoamid-dev06.comhem.com'
 alias tunnelpr05='ssh -L 9005:srvuchoismid-pr05.is.comhem.com:8080 -i ~/.ssh/icc -l chdev srvucpsjmp01.is.comhem.com'
 alias tunnelpr07='ssh -L 9007:srvuchoismid-pr07.is.comhem.com:8080 -i ~/.ssh/icc -l chdev srvucpsjmp01.is.comhem.com'
