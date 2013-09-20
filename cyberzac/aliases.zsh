@@ -21,12 +21,13 @@ alias svenska-bitcoin="java6;cd ~/Documents/IdeaProjects/svenska-bitcoin"
 #
 # Hosts
 #
-alias cyberzac='ssh zac@nacka.cyberzac.se'
-alias elephant='ssh zac@elephant.local'
-alias heart='ssh zac@heart.local'
-alias velvet='ssh velvet.cyberzac.se'
+alias cyberzac='ssh zac@nacka.cyberzac.se $*'
+alias elephant='ssh zac@elephant.local $*'
+alias heart='ssh zac@heart.local $*'
+alias velvet='ssh velvet.cyberzac.se $*'
 #alias maza='ssh zac@173.255.226.75'
-alias maza='ssh zac@maza.cyberzac.se'
-alias minecraft='ssh _minecraft@minecraft.cyberzac.se'
-alias pi='ssh pi@hallon.cyberzac.se'
+alias maza='ssh zac@maza.cyberzac.se $*'
+alias minecraft='ssh _minecraft@minecraft.cyberzac.se $*'
+alias pi='ssh pi@hallon.cyberzac.se $*'
+alias avalon='ssh root@10.0.1.205 $*'
 
