@@ -1,0 +1,1 @@
+SBT_OPS="-XX:MaxPergSize=1024M"
