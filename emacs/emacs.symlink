@@ -1,0 +1,117 @@
+(global-font-lock-mode t)
+(windmove-default-keybindings)
+
+(setq mac-option-modifier 'none)
+(setq mac-command-modifier 'meta)
+
+(setq use-file-dialog nil)
+
+;; "y or n" instead of "yes or no"
+(fset 'yes-or-no-p 'y-or-n-p)
+
+;; Highlight regions and add special behaviors to regions.
+;; "C-h d transient" for more info
+(setq transient-mark-mode t)
+
+;; Display line and column numbers
+(setq line-number-mode t)
+(setq column-number-mode t)
+
+(global-set-key "\C-c\C-w" 'backward-kill-word)
+
+;; Remove unnecessary gui stuff
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode 1))
+
+(blink-cursor-mode 0) ;; no blink
+
+(set-background-color "black")
+(set-face-background 'default "black")
+(set-face-background 'region "black")
+(set-face-foreground 'default "white")
+(set-face-foreground 'region "gray60")
+(set-foreground-color "white")
+(set-cursor-color "red")
+
+;;;;;;;;;;;;
+;; SCALA
+;;;;;;;;;;;
+
+(let ((path "~/.emacs.d/scala"))
+(setq load-path (cons path load-path))
+(load "scala-mode-auto.el"))
+
+(defun scala-turnoff-indent-tabs-mode ()
+(setq indent-tabs-mode nil))
+
+;; scala mode hooks
+(add-hook 'scala-mode-hook 'scala-turnoff-indent-tabs-mode)
+
+;; Maven bound to 
+(add-hook 'scala-mode-hook
+'(lambda ()
+(define-key scala-mode-map '[f6] 'mvn)))
+
+(load "~/.emacs.d/nxml-mode/rng-auto.el")
+(setq auto-mode-alist 
+      (cons '("\\.\\(xml\\|xsl\\|rng\\|xhtml\\)\\'" . nxml-mode)
+	      auto-mode-alist))
+;;(add-hook 'scala-mode-hook
+;;	  '(lambda ()
+;;	     (yas/minor-mode-on)))
+
+
+
+;;
+;; SBT
+;;
+(add-to-list 'load-path' "~/.emacs.d/sbt")
+
+
+
+;;
+;; Ensime
+;;
+
+;; Load the ensime lisp code...
+(add-to-list 'load-path "~/.emacs.d/ensime/elisp/")
+(require 'ensime)
+
+;; This step causes the ensime-mode to be started whenever
+;; scala-mode is started for a buffer. You may have to customize this step
+;; if you're not using the standard scala mode.
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+
+;; MINI HOWTO: 
+;; Open .scala file. M-x ensime (once per project)
+
+
+
+;;;;;;;;;;;;
+
+;;; This was installed by package-install.el.
+;;; This provides support for the package system and
+;;; interfacing with ELPA, the package archive.
+;;; Move this code earlier if you want to reference
+;;; packages in your .emacs.
+(when
+    (load
+     (expand-file-name "~/.emacs.d/elpa/package.el"))
+  (package-initialize))
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(inferior-lisp-program "clj"))
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
+
+(require 'slime)
+(slime-setup '(slime-repl))
+
