@@ -1,0 +1,5 @@
+#!/bin/bash
+if [ -d /Volumes/bonum ]; then
+    diskutil unmountDisk /Volumes/bonum 
+fi
+say godnatt
