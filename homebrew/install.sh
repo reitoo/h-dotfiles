@@ -13,7 +13,7 @@ then
   exit
 fi
 
-packages="grc coreutils spark maven nmap scala sbt git tomcat blueutil giter8 graphviz subsversion python python3 "
+packages="grc coreutils spark maven nmap scala sbt git tomcat blueutil giter8 graphviz subsversion python python3 wget"
 # Install homebrew packages
 brew install $packages
 # Upgrade
