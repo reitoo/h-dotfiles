@@ -1,5 +1,7 @@
 
-alias chg="cd ~/Documents/comhem/git"
+#Replaced by shell-function
+#alias chg="cd ~/Documents/comhem/git" 
+
 alias ch="cd ~/Documents/comhem"
 
 alias dev-open='mvn clean install oradeploy:deploy -Denvironment=dev06-open -DskipTests=true'
