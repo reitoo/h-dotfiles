@@ -1,0 +1,2 @@
+#compdef chg
+_files -W $CH_HOME/git -/

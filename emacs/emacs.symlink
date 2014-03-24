@@ -34,6 +34,8 @@
 (set-foreground-color "white")
 (set-cursor-color "red")
 
+;; zsh
+(add-to-list 'auto-mode-alist '("\\.zsh\\'" . sh-mode))
 
 (let ((path "~/.emacs.d"))
 (setq load-path (cons path load-path))
