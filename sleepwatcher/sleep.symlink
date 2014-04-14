@@ -3,6 +3,6 @@ if [ -d /Volumes/bonum ]; then
     diskutil unmountDisk /Volumes/bonum 
 fi
 
-#say godnatt
+say godnatt
 
 $(date >> ~/.sleeplog)
