@@ -37,6 +37,7 @@ alias jumpapi01='ssh -i ~/.ssh/icc -l chdev srvuapijmp01.is.comhem.com'
 alias jumpcps01='ssh -i ~/.ssh/icc -l chdev srvucpsjmp01.is.comhem.com'
 alias jump='ssh -i ~/.ssh/icc -l chdev srvucpsjmp01.is.comhem.com'
 alias jumpis01='ssh -i ~/.ssh/icc -l chdev srvuisjmp01.is.comhem.com'
+alias jump02='ssh srvucpsjmp02.is.comhem.com'
 
 # Prod
 alias pr0='ssh reader@srvuchoismid-pr01.comhem.com'
