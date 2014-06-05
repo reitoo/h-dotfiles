@@ -2,7 +2,8 @@
 #Replaced by shell-function
 #alias chg="cd ~/Documents/comhem/git" 
 
-alias ch="cd ~/Documents/comhem"
+alias comhem-mvn="(cd ~/.m2; ln -shf comhem.xml settings.xml)"
+alias ch="comhem-mvn;cd ~/Documents/comhem"
 
 alias dev-open='mvn clean install oradeploy:deploy -Denvironment=dev06-open -DskipTests=true'
 alias dev-java6='mvn clean install oradeploy:deploy -Denvironment=dev06-java6 -DskipTests=true'
