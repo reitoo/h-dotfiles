@@ -13,7 +13,34 @@ then
   exit
 fi
 
-packages="grc coreutils spark maven nmap scala sbt git tomcat blueutil giter8 graphviz subversion python python3 wget sleepwatcher jq node qt pyqt gettext heroku-toolbelt"
+packages=<<EOF 
+grc 
+coreutils
+spark
+maven
+nmap
+scala
+sbt
+git
+tomcat
+blueutil
+giter8
+graphviz
+subversion
+python
+python3
+wget
+sleepwatcher
+jq
+node
+qt
+pyqt
+gettext
+heroku
+toolbelt
+protobuf
+netcat
+EOF
 # Install homebrew packages
 brew install $packages
 # Upgrade
