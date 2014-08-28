@@ -1,9 +1,9 @@
 
 #Replaced by shell-function
-#alias chg="cd ~/Documents/comhem/git" 
+#alias chg="cd ~/comhem/git" 
 
 alias comhem-mvn="(cd ~/.m2; ln -shf comhem.xml settings.xml)"
-alias ch="comhem-mvn;cd ~/Documents/comhem"
+alias ch="comhem-mvn;cd ~/comhem"
 
 alias dev-open='mvn clean install oradeploy:deploy -Denvironment=dev06-open -DskipTests=true'
 alias dev-java6='mvn clean install oradeploy:deploy -Denvironment=dev06-java6 -DskipTests=true'
@@ -36,9 +36,9 @@ alias qa2='ssh -i ~/.ssh/icc -l oracle tsrvusoaapp03.comhem.com'
 alias jenkins='ssh -i ~/.ssh/icc -l jenkins srvuisitapp01.comhem.com'
 alias jumpapi01='ssh -i ~/.ssh/icc -l chdev srvuapijmp01.is.comhem.com'
 alias jumpcps01='ssh -i ~/.ssh/icc -l chdev srvucpsjmp01.is.comhem.com'
-alias jump='ssh -i ~/.ssh/icc -l chdev srvucpsjmp01.is.comhem.com'
-alias jumpis01='ssh -i ~/.ssh/icc -l chdev srvuisjmp01.is.comhem.com'
-alias jump02='ssh srvucpsjmp02.is.comhem.com'
+alias jump='ssh reto01@srvucpsjmp02.is.comhem.com'
+alias jump1='ssh -i ~/.ssh/icc -l chdev srvuisjmp01.is.comhem.com'
+alias jump2='ssh srvucpsjmp02.is.comhem.com'
 
 # Prod
 alias pr0='ssh reader@srvuchoismid-pr01.comhem.com'
