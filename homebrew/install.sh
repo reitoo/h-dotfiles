@@ -13,8 +13,8 @@ then
   exit
 fi
 
-packages=<<EOF 
-grc 
+read -d '' packages <<EOF
+grc
 coreutils
 spark
 maven
@@ -23,22 +23,13 @@ scala
 sbt
 git
 tomcat
-blueutil
-giter8
-graphviz
 subversion
 python
 python3
 wget
-sleepwatcher
 jq
 node
-qt
-pyqt
 gettext
-heroku
-toolbelt
-protobuf
 netcat
 EOF
 # Install homebrew packages
