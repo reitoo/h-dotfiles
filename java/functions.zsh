@@ -2,23 +2,27 @@
 #  Switch java version
 
 java6 () {
-    set_java 1.6.0_45-b06-451.jdk
+    setjdk 1.6
 }
 
-java7 () {                                                                                                                                   
-    set_java jdk1.7.0_51                                                                                                                     
-}                                                                                                                                            
-                                                                                                                                             
-java8 () {                                                                                                                                   
-    set_java jdk1.8.0_05                                                                                                                     
-}                                                                                                                                            
-                                                                                                                                             
-set_java () {                                                                                                                                
-    if [ "$JAVA_HOME" ]; then                                                                                                                
-        pathremove $JAVA_HOME/bin                                                                                                            
-        pathremove $JAVA_HOME/man MANPATH                                                                                                    
-    fi                                                                                                                                       
-    export JAVA_HOME=/Library/Java/JavaVirtualMachines/$1.jdk/Contents/Home                                                                  
-    pathprepend $JAVA_HOME/bin                                                                                                               
-    pathprepend $JAVA_HOME/man MANPATH                                                                                                       
-}                                                                                                                                            
+java7 () {
+    setjdk 1.7
+}
+
+java8 () {
+    setjdk 1.8
+}
+
+function setjdk() {
+  if [ $# -ne 0 ]; then
+   removeFromPath '/System/Library/Frameworks/JavaVM.framework/Home/bin'
+   if [ -n "${JAVA_HOME+x}" ]; then
+    removeFromPath $JAVA_HOME
+   fi
+   export JAVA_HOME=`/usr/libexec/java_home -v $@`
+   export PATH=$JAVA_HOME/bin:$PATH
+  fi
+ }
+ function removeFromPath() {
+  export PATH=$(echo $PATH | sed -E -e "s;:$1;;" -e "s;$1:?;;")
+ }
